@@ -60,7 +60,7 @@
                         <a class="dropdown-item" href="{{route('clients.index')}}">All Clients</a>
                     </li>
                     <li>
-                        <a class="dropdown-item" href="{{ route('clients.create') }}">Add Clients</a>
+                        <a class="dropdown-item" href="{{ route('clients.create') }}">Add Client</a>
                     </li>
                 
         </ul>
