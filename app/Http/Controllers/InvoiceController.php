@@ -12,25 +12,24 @@ use App\Http\Requests\UpdateInvoiceRequest;
 class InvoiceController extends Controller
 {
     public function index(Request $request)
-{
-    $search = $request->input('search');
+    {
+        $search = $request->input('search');
 
-    // Query builder
-    $query = Invoice::with('client');
+        $query = Invoice::with('client');
 
-    if ($search) {
-        $query->where(function($q) use ($search) {
-            $q->where('invoice_number', 'like', '%' . $search . '%')
-              ->orWhereHas('client', function($query) use ($search) {
-                  $query->where('name', 'like', '%' . $search . '%');
-              });
-        });
+        if ($search) {
+            $query->where(function ($q) use ($search) {
+                $q->where('invoice_number', 'like', '%' . $search . '%')
+                    ->orWhereHas('client', function ($query) use ($search) {
+                        $query->where('name', 'like', '%' . $search . '%');
+                    });
+            });
+        }
+
+        $invoices = $query->paginate(10);
+
+        return view('invoices.index', compact('invoices'));
     }
-
-    $invoices = $query->paginate(10); 
-
-    return view('invoices.index', compact('invoices'));
-}
 
 
     public function create()
@@ -44,7 +43,6 @@ class InvoiceController extends Controller
         $client = Client::find($request->client_id);
 
         $invoiceData = $request->except('items');
-        $invoiceData['client_name'] = $client ? $client->name : null;
 
         $invoice = Invoice::create($invoiceData);
 

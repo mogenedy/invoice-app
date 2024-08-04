@@ -3,7 +3,6 @@
 <head>
     <title>Invoice</title>
     <style>
-        /* أضف أنماط CSS هنا لتنسيق الفاتورة */
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
