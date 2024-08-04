@@ -62,19 +62,21 @@
                                                 <tr>
                                                     <td>{{ $loop->iteration }}</td>
                                                     <td>{{ $invoice->invoice_number }}</td>
-                                                    <td>{{ $invoice->client_name }}</td>
-                                                    <td>{{ $invoice->client_address }}</td>
+                                                    <td>{{ $invoice->client->name }}</td>
+                                                    <td>{{ $invoice->client->address }}</td>
                                                     <td>{{ Carbon::parse($invoice->invoice_date)->format('Y-m-d') }}</td>
                                                     <td>{{ Carbon::parse($invoice->due_date)->format('Y-m-d') }}</td>
                                                     <td>LE{{ number_format($invoice->total_amount, 2) }}</td>
                                                     <td>
                                                         <a href="{{ route('invoices.show', $invoice->id) }}" class="btn btn-primary">View Invoice</a>
                                                         <a href="{{ route('invoices.edit', $invoice->id) }}" class="btn btn-warning">Edit Invoice</a>
+                                                        @if(auth()->user()->role == 'admin')
                                                         <form id="delete-form-{{ $invoice->id }}" action="{{ route('invoices.destroy', $invoice->id) }}" method="POST" style="display: inline;">
                                                             @csrf
                                                             @method('DELETE')
                                                             <button type="button" class="btn btn-danger" onclick="deleteInvoice({{ $invoice->id }})">Delete</button>
                                                         </form>
+                                                        @endif
                                                     </td>
                                                 </tr>
                                             @endforeach
