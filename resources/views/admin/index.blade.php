@@ -72,11 +72,14 @@
                                                     <td>
                                                         <a href="{{ route('invoices.show', $invoice->id) }}" class="btn btn-primary">View Invoice</a>
                                                         <a href="{{ route('invoices.edit', $invoice->id) }}" class="btn btn-warning">Edit Invoice</a>
+
+                                                        @if(auth()->user()->role == 'admin')
                                                         <form id="delete-form-{{ $invoice->id }}" action="{{ route('invoices.destroy', $invoice->id) }}" method="POST" style="display: inline;">
                                                             @csrf
                                                             @method('DELETE')
                                                             <button type="button" class="btn btn-danger" onclick="deleteInvoice({{ $invoice->id }})">Delete</button>
                                                         </form>
+                                                        @endif
                                                     </td>
                                                 </tr>
                                             @endforeach

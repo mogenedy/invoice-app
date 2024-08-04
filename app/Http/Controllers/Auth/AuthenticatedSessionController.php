@@ -10,6 +10,7 @@ use Illuminate\Http\RedirectResponse;
 use App\Providers\RouteServiceProvider;
 use App\Http\Requests\Auth\LoginRequest;
 use Illuminate\Support\Facades\Redirect;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 class AuthenticatedSessionController extends Controller
 {
@@ -29,15 +30,9 @@ class AuthenticatedSessionController extends Controller
         $request->authenticate();
 
         $request->session()->regenerate();
-        $url='';
-        if(auth::user()->role=='admin'){
-            $url='admin/dashboard';
-        }else if(auth::user()->role=='user'){
-            $url='user/dashboard';
-        
-        }
+       
 
-        return redirect()->intended($url);
+        return redirect()->intended('dashboard');
     }
 
     /**
