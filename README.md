@@ -1,13 +1,4 @@
 # Invoice App
-
-email:admin@gmail.com
-name:admin
-password:123456789
----
-user@gmail.com
-name:user
-password:12345678
-====================
 ## Installation
 1. Clone the repository:
 ```bash
