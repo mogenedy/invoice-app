@@ -49,7 +49,7 @@ password:12345678
     ```
 
 
-7-seed the database
+7.seed the database
 ```bash
 php artisan db:seed
 ```
