@@ -32,10 +32,12 @@ Route::middleware(['auth', 'roles:admin'])->group(function () {
 
 
 
-    //clients
-    Route::resource('clients', ClientController::class);
+    
    
 });
+Route::get('/invoices/create',[InvoiceController::class,'create'])->name('invoices.create');  
+//clients
+Route::resource('clients', ClientController::class);
 Route::middleware(['auth','roles:user'])->group(function () {
     Route::get('/user/dashboard', [UserController::class, 'user_dashboard'])
          ->name('user.dashboard');
