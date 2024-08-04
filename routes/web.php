@@ -21,7 +21,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 Route::middleware(['auth', 'roles:admin'])->group(function () {
-    Route::get('/admin/dashboard', [AdminController::class, 'admin_dashboard'])
+    Route::get('/admin/dashboard', [AdminController::class, 'adminDashboard'])
          ->name('admin.dashboard');
          //invoices
     Route::get('/invoices', [InvoiceController::class, 'index'])->name('invoices.index');
