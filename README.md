@@ -48,22 +48,12 @@ password:12345678
     php artisan migrate
     ```
 
-7. Install the frontend dependencies:
 
-    ```bash
-    npm install
-    ```
-
-8. Build the frontend assets:
-
-    ```bash
-    npm run dev
-```
-9-seed the database
+7-seed the database
 ```bash
 php artisan db:seed
 ```
-10. Start the local development server:
+8. Start the local development server:
 
     ```bash
     php artisan serve
