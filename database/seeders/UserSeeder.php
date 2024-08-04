@@ -13,7 +13,6 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('users')->truncate();
 
         DB::table('users')->insert([
                 'name' => 'admin',
