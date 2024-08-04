@@ -30,7 +30,7 @@ password:12345678
     ```bash
     php artisan key:generate
     ```
-5-
+
 5. Set up your database configuration in the `.env` file:
 
     ```plaintext
