@@ -48,11 +48,12 @@ password:12345678
     php artisan migrate
     ```
 
+7. seed the database
 
-7.seed the database
-```bash
-php artisan db:seed
-```
+    ```bash
+   php artisan db:seed
+    ```
+ 
 8. Start the local development server:
 
     ```bash
