@@ -11,7 +11,7 @@ Route::get('/', function () {
 });
 
 Route::middleware('auth')->group(function () {
-    Route::get('/dashboard', [AdminController::class, 'adminDashboard'])
+    Route::get('/dashboard', [InvoiceController::class, 'index'])
         ->name('admin.dashboard');
     Route::get('/invoices', [InvoiceController::class, 'index'])->name('invoices.index');
     Route::get('/invoices/create', [InvoiceController::class, 'create'])->name('invoices.create');
