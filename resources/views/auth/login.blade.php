@@ -7,7 +7,7 @@
     <meta name="description" content="Responsive Bootstrap4 Dashboard Template">
     <meta name="author" content="ParkerThemes">
     <link rel="shortcut icon" href="{{ asset('img/fav.png') }}" />
-    <title>Wafi Admin Template - Login</title>
+    <title>Sahel Books-login page</title>
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/main.css') }}" />
 </head>

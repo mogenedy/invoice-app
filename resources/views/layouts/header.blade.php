@@ -1,7 +1,7 @@
 <header class="header">
     <div class="logo-wrapper">
-        <a href="index.html" class="logo">
-            <img src="{{ asset('img/logo55.jpg') }}" alt="invoice Admin Dashboard" />
+        <a href="{{route('invoices.index')}}" class="logo">
+            <img src="{{ asset('img/logo99.png') }}" alt="invoice Admin Dashboard" />
         </a>
     </div>
     <div class="header-items">
